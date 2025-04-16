@@ -1,0 +1,16 @@
+export const languages = [
+    { name: "English", code: "", flag: "https://flagcdn.com/w40/us.png" },
+    { name: "Deutsch", code: "de", flag: "https://flagcdn.com/w40/de.png" },
+    { name: "Français", code: "fr", flag: "https://flagcdn.com/w40/fr.png" },
+    { name: "Español", code: "es", flag: "https://flagcdn.com/w40/es.png" },
+    { name: "Italiano", code: "it", flag: "https://flagcdn.com/w40/it.png" },
+    { name: "Português", code: "pt", flag: "https://flagcdn.com/w40/pt.png" },
+    { name: "Türkçe", code: "tr", flag: "https://flagcdn.com/w40/tr.png" },
+    { name: "Nederlands", code: "nl", flag: "https://flagcdn.com/w40/nl.png" },
+    { name: "العربية", code: "ar", flag: "https://flagcdn.com/w40/sa.png" },
+    { name: "Polski", code: "pl", flag: "https://flagcdn.com/w40/pl.png" },
+    { name: "Bahasa Indonesia",code: "id",flag: "https://flagcdn.com/w40/id.png",},
+    { name: "日本語", code: "ja", flag: "https://flagcdn.com/w40/jp.png" },
+    { name: "한국어", code: "ko", flag: "https://flagcdn.com/w40/kr.png" },
+    { name: "Українська", code: "uk", flag: "https://flagcdn.com/w40/ua.png" },
+  ];
