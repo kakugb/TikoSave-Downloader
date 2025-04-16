@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { languages, reviews, faqData, faqAnswers } from "../utils/data";
-import { ChevronDown, Download, Menu, ClipboardPaste, X } from "lucide-react";
+import { ChevronDown, Menu, ClipboardPaste, X } from "lucide-react";
 import Link from "next/link";
 import clsx from "clsx";
 import Image from "next/image";
@@ -11,18 +11,19 @@ function English() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
-  const [openFAQ, setOpenFAQ] = useState(null);
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, [reviews.length]);
+  }, []);
 
-  const toggleFAQ = (index:any) => {
+  const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index);
   };
+
   return (
     <>
       <div className=" sticky top-0 z-50 text-gray-600 bg-white py-2 shadow-md">
@@ -254,7 +255,13 @@ function English() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           <div className="p-6 rounded-lg shadow-lg flex flex-col items-center">
-            <Image src="/search.webp" alt="Paste Icon" width={52} height={52}  className="mb-2" />
+            <Image
+              src="/search.webp"
+              alt="Paste Icon"
+              width={52}
+              height={52}
+              className="mb-2"
+            />
             <h3 className="text-xl font-bold mt-2 text-gray-700">
               Find the TikTok Video to Be Saved
             </h3>
@@ -266,7 +273,13 @@ function English() {
           </div>
 
           <div className="p-6 rounded-lg shadow-lg flex flex-col items-center">
-            <Image src="/paste.webp" alt="Paste Icon" width={52} height={52}  className="mb-2" />
+            <Image
+              src="/paste.webp"
+              alt="Paste Icon"
+              width={52}
+              height={52}
+              className="mb-2"
+            />
 
             <h3 className="text-xl font-bold mt-2 text-gray-700">
               Paste the TikTok Video Link
@@ -542,7 +555,8 @@ function English() {
         {/* Review Slider */}
         <div className="w-full text-white p-6 text-center  rounded-lg shadow-lg">
           <h2 className="text-md md:text-2xl font-bold  bg-teal-500 py-6">
-            User Reviews for SaveTiko – The Best TikTok Video Downloader
+            User Reviews for <span className="text-white">TikoSave</span> – The
+            Best TikTok Video Downloader
           </h2>
           <div className="bg-white text-black p-6 rounded-lg shadow-md shadow-gray-500 transition-transform duration-500 ease-in-out h-36 flex flex-col justify-center items-center">
             <h3 className="font-bold text-lg flex items-center">
@@ -553,11 +567,13 @@ function English() {
                 className="w-6 h-4 ml-2"
               />
             </h3>
-
             <p className="text-yellow-500 text-xl">
               {reviews[currentIndex].stars}
             </p>
-            <p className="italic text-sm">"{reviews[currentIndex].comment}"</p>
+            <p className="italic text-sm">
+              &quot;{reviews[currentIndex].comment}&quot;
+            </p>{" "}
+            
           </div>
           {/* Dots Navigation */}
           <div className="flex justify-center mt-4 space-x-2">
@@ -754,7 +770,7 @@ function English() {
 
       {/* Copyright */}
       <div className="text-center text-sm mt-6 mb-20">
-        Copyright 2025 &copy; TikoSave.com Powered by TikoSave
+        Copyright 2025 copy; TikoSave.com Powered by TikoSave
       </div>
     </>
   );
