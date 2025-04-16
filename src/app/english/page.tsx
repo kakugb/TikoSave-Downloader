@@ -20,17 +20,17 @@ function English() {
     return () => clearInterval(interval);
   }, [reviews.length]);
 
-  const toggleFAQ = (index) => {
+  const toggleFAQ = (index:any) => {
     setOpenFAQ(openFAQ === index ? null : index);
   };
   return (
     <>
-      <div className=" sticky top-0 z-50 text-gray-600 bg-white ">
+      <div className=" sticky top-0 z-50 text-gray-600 bg-white py-2 shadow-md">
         <nav className="flex justify-around items-center max-w-7xl mx-auto">
           {/* Logo */}
           <Link href="/">
             <Image
-              src="/tikologo.png"
+              src="/tikologo.jpg"
               alt="Paste Icon"
               width={220}
               height={220}

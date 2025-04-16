@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "TikoSave Downloader",
   description: "Tiktok Video Downloader",
+  icons: {
+    icon: "/tikologoicon.ico", // or "/favicon.png" or ".svg"
+  },
 };
 
 export default function RootLayout({
