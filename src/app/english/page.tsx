@@ -1,27 +1,31 @@
 'use client';
-import React, { useState } from 'react';
-import { languages } from '../utils/data';
+import React, { useEffect, useState } from 'react';
+import { languages,reviews } from '../utils/data';
 import { ChevronDown, Download, Menu, ClipboardPaste, X } from 'lucide-react';
 import Link from 'next/link';
 import clsx from 'clsx';
 import Image from 'next/image';
-import logo from '../../../public/tikologo.png'
-import playstoreImg from '../../../public/playstoreImg.webp'
-import paste from '../../../public/paste.webp'
-import search from '../../../public/search.webp'
-import download from '../../../public/download.webp'
+import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
+
 function English() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
-
+    const [currentIndex, setCurrentIndex] = useState(0);
+      useEffect(() => {
+        const interval = setInterval(() => {
+          setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+        }, 3000);
+        return () => clearInterval(interval);
+      }, [reviews.length]);
     return (
         <>
             <div className=" sticky top-0 z-50 text-gray-600 bg-white ">
                 <nav className="flex justify-around items-center max-w-7xl mx-auto">
                     {/* Logo */}
                     <Link href="/">
-                        <Image src={logo} alt="Logo" className="w-36 h-24 cursor-pointer " />
+
+                        <Image src="/tikologo.png" alt="Paste Icon" width={220} height={220} />
                     </Link>
 
                     {/* Desktop Navigation */}
@@ -175,8 +179,8 @@ function English() {
                 <h1 className='w-full mt-9 text-3xl font-semibold text-center text-gray-700'>Download TikoSave App on Android</h1>
                 <p className='text-gray-600 text-center mt-4 font-semibold'>The TikTok downloader app is available for downloading TikTok videos more conveniently if you use it very often.</p>
 
-                <div className='w-full flex justify-center'>
-                    <Image src={playstoreImg} alt="Logo" className=" mt-5 w-72 h-22 md:w-auto md:h-auto" />
+                <div className='w-full flex justify-center mt-5'>
+                    <Image src="/playstoreImg.webp" alt="playstore image" width={350} height={350} />
                 </div>
             </div>
 
@@ -202,46 +206,259 @@ function English() {
 
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <h1 className="w-full mt-6 text-2xl sm:text-3xl font-semibold text-center text-white bg-teal-500 py-3 rounded-md">
-                How to Download TikTok Video Without Watermark Online
+                    How to Download TikTok Video Without Watermark Online
                 </h1>
                 <p className="mt-4 leading-7 text-gray-600 text-base sm:text-lg">
-                TikTok video download with TikoSave is very simple. All you need is to get the link of the TikTok video you want to download. Our TikTok downloader tool will do the rest for you. To find out the detailed steps, please follow the instructions below.
+                    TikTok video download with TikoSave is very simple. All you need is to get the link of the TikTok video you want to download. Our TikTok downloader tool will do the rest for you. To find out the detailed steps, please follow the instructions below.
                 </p>
 
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-              <div className="p-6 rounded-lg shadow-lg flex flex-col items-center">
-              <Image src={search} alt="Logo" className="w-16 h-16 cursor-pointer " />
-                <h3 className="text-xl font-bold mt-2 text-gray-700">
-                Find the TikTok Video to Be Saved
-                </h3>
-                <p className="mt-2 text-center text-gray-600 font-poppins">
-                Open the TikTok App on your device and play the video you want to download. Tap the “Share” button at the bottom right of the video page and select “Copy Link.”
-                </p>
-              </div>
+                    <div className="p-6 rounded-lg shadow-lg flex flex-col items-center">
+                        <Image src="/search.webp" alt="Paste Icon" width={52} height={52} />
+                        <h3 className="text-xl font-bold mt-2 text-gray-700">
+                            Find the TikTok Video to Be Saved
+                        </h3>
+                        <p className="mt-2 text-center text-gray-600 font-poppins">
+                            Open the TikTok App on your device and play the video you want to download. Tap the “Share” button at the bottom right of the video page and select “Copy Link.”
+                        </p>
+                    </div>
 
-              <div className="p-6 rounded-lg shadow-lg flex flex-col items-center">
-              <Image src={paste} alt="paste" className="w-16 h-16 cursor-pointer " />
-                <h3 className="text-xl font-bold mt-2 text-gray-700">
-                Paste the TikTok Video Link
-                </h3>
-                <p className="mt-2 text-center text-gray-600 font-poppins">
-                Visit our TikTok downloader site (https://tikosave.com) or open the TikTokio app. Then paste the video link in the input box above. After that, click the “Download” button.
-                </p>
-              </div>
+                    <div className="p-6 rounded-lg shadow-lg flex flex-col items-center">
+                        <Image src="/paste.webp" alt="Paste Icon" width={52} height={52} />
 
-              <div className="p-6 rounded-lg shadow-lg flex flex-col items-center">
-              <Image src={download} alt="paste" className="w-16 h-16 cursor-pointer " />
-                <h3 className="text-xl font-bold mt-2 text-gray-700">
-                Choose the Format and Download
-                </h3>
-                <p className="mt-2 text-center text-gray-600 font-poppins">
-                Choose the format you want and click the preferred option. Several options are available: Download Without Watermark”, “Download with Watermark”, “ Download MP3”, etc.
-                </p>
-              </div>
+                        <h3 className="text-xl font-bold mt-2 text-gray-700">
+                            Paste the TikTok Video Link
+                        </h3>
+                        <p className="mt-2 text-center text-gray-600 font-poppins">
+                            Visit our TikTok downloader site (https://tikosave.com) or open the TikTokio app. Then paste the video link in the input box above. After that, click the “Download” button.
+                        </p>
+                    </div>
+
+                    <div className="p-6 rounded-lg shadow-lg flex flex-col items-center">
+                        <Image src="/download.webp" alt="Paste Icon" width={52} height={52} />
+                        <h3 className="text-xl font-bold mt-2 text-gray-700">
+                            Choose the Format and Download
+                        </h3>
+                        <p className="mt-2 text-center text-gray-600 font-poppins">
+                            Choose the format you want and click the preferred option. Several options are available: Download Without Watermark”, “Download with Watermark”, “ Download MP3”, etc.
+                        </p>
+                    </div>
+                </div>
             </div>
+
+
+
+
+            <div className="w-full max-w-7xl bg-gray-100 mx-auto px-4 sm:px-6 lg:px-8 py-8 rounded-xl">
+                <h1 className="w-full mt-6 text-3xl sm:text-4xl font-bold text-center text-gray-700 leading-tight">
+                    Why Do You Need A TikTok Downloader
+                </h1>
+
+                <p className="mt-4 leading-7 text-gray-600 text-base sm:text-md text-center">
+                    There are several reasons why you may need a TikTok (video) downloader like TikoSave. A TikTok downloader is useful for downloading TikTok videos without a watermark offline, sharing content with others easily, saving their favorite videos in case the videos are deleted by the platform, and facilitating further content editing and remixing. It enhances the user experience and allows for greater convenience and creativity.
+                </p>
+
+                <p className="mt-4 leading-7 text-gray-600 text-base sm:text-md text-center">
+                    With this TikTok downloader, content creators can easily save their TikTok videos without the TikTok logo or ID and share them on Facebook, YouTube Shorts, Instagram, and other social platforms to expand their reach.
+                </p>
+
+                <p className="mt-4 leading-7 text-gray-600 text-base sm:text-md text-center">
+                    Overall, our TikoSave video downloader is simple, fast, and free to use. You can download TikTok videos without watermark to any device you’d like and save them as MP4 or MP3 formats in HD quality. It’s tested that this TikTok watermark remover performs well in both Android and iOS systems (iPhones and iPads). Just copy and paste!
+                </p>
+
             </div>
 
+
+
+
+
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <h1 className="w-full mt-6 text-2xl sm:text-3xl font-semibold text-center text-white bg-teal-500 py-3 rounded-md">
+                    How to Download TikTok Video Without Watermark on Mobile Phones (Android)
+                </h1>
+                <p className="mt-4 leading-7 text-gray-600 text-base sm:text-lg">
+                    It’s pretty simple to download TikTok videos (MP4/MP3) to Android phones with TikoSave. If you want to remove the TT watermark or logo of the videos and save them to Android, follow the instructions below:
+                </p>
+                <ul className="mt-4 sm:mt-6 ml-4 sm:ml-6 leading-8 text-gray-600 text-base sm:text-lg list-disc list-inside">
+                    <li>Find the TikTok video you want to download without a watermark and play it</li>
+                    <li>Click the “Share” button on the right side and copy the link of the video</li>
+                    <li>Open the browser on your Android phone and go to tiktokio.com. Paste the video download link into the text box</li>
+                    <li>Hit the blue “Download” button and a range of options will show up. Select the one you want</li>
+                </ul>
+            </div>
+
+
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <h1 className="w-full mt-6 text-2xl sm:text-3xl font-semibold text-center text-white bg-teal-500 py-3 rounded-md">
+                    TikTok Video Download to PCs
+                </h1>
+                <p className="mt-4 leading-7 text-gray-600 text-base sm:text-lg">
+                    The steps of downloading TikTok videos to PCs or laptops are similar to downloading them to Android phones. Just replace “Android phones” with “personal computers”. Our TikTok watermark remover is compatible with various operating systems. Windows, Linux, and Mac OS.
+                </p>
+            </div>
+
+
+
+
+
+
+
+
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <h1 className="w-full mt-6 text-2xl sm:text-3xl font-semibold text-center text-white bg-teal-500 py-3 rounded-md">
+                    Download TikTok Video Without Watermark on iOS (iPhones or iPads)
+                </h1>
+                <p className="mt-4 leading-7 text-gray-600 text-base sm:text-lg">
+                    Our team noticed that many iPhone users might have a problem with using other TikTok downloaders to save their favorite TikTok videos without watermarks.
+                </p>
+                <p className="mt-3 leading-7 text-gray-600 text-base sm:text-lg">
+                    To resolve this problem, we’ve upgraded our technology and made TikTokio a versatile TikTok video downloader for both Android and iOS users.
+                </p>
+                <p className="mt-3 leading-7 text-gray-600 text-base sm:text-lg">
+                    Here are the steps:
+                </p>
+                <ul className="mt-4 sm:mt-6 ml-4 sm:ml-6 leading-8 text-gray-600 text-base sm:text-lg list-disc list-inside">
+                    <li>Get the link of your favorite TikTok videos</li>
+                    <li>Go to tiktokio.com with your Safari application on your iPhone or iPad</li>
+                    <li>Paste the video link in the box and click on the “Download” button</li>
+                    <li>The download starts after selecting a format (MP4/MP3).</li>
+                </ul>
+            </div>
+
+
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <h1 className="w-full mt-6 text-2xl sm:text-3xl font-semibold text-center text-white bg-teal-500 py-3 rounded-md">
+                    How to Download TikTok MP3 or Music (Extract the Audio Files from TikTok Videos)?
+                </h1>
+                <p className="mt-4 leading-7 text-gray-600 text-base sm:text-lg">
+                    Lots of people are looking for methods to save their favorite TikTok videos in MP3 formats.  With TikoSave, it’s no longer an issue.
+                </p>
+                <p className="mt-3 leading-7 text-gray-600 text-base sm:text-lg">
+                    The following steps will guide you on how to download TikTok MP3, songs, music, and audio files with TikTokio in a few seconds.
+                </p>
+
+                <ul className="mt-4 sm:mt-6 ml-4 sm:ml-6 leading-8 text-gray-600 text-base sm:text-lg list-disc list-inside">
+                    <li>Open the TT application/website on your device and play the video with the audio/music you desire to save.</li>
+                    <li>Tap the “Share” button at the right side of the video page</li>
+                    <li>Select “Copy Link” after a menu shows up. After that, the video URL will be copied to your clipboard</li>
+                    <li>Go to the TikoSave website (our TikTok downloader) and paste the copied video link into the input box</li>
+                    <li>Click on the “Download” button and you’ll see a range of options. The “Download mp3” option is usually located the last.</li>
+                    <li>Hit the “Download mp3” button and the conversion will be finished in 5 seconds. You’ll see the downloaded TikTok music or songs in the default downloader folder.</li>
+                </ul>
+            </div>
+
+
+
+
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <h2 className="text-3xl font-bold text-gray-700 text-center mb-4">
+                    Pros & Cons of SaveTiko
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Pros */}
+                    <div className="bg-white border border-gray-200 rounded-lg shadow-md p-4">
+                        <h3 className="text-xl font-bold text-green-500 mb-5">Pros</h3>
+                        <ul className="text-left text-lg mt-2 space-y-4">
+                            {[
+                                "Save TikTok videos without any logo or watermark for a clean look.",
+                                "No hidden charges, subscriptions, or sign-ups required.",
+                                "Just copy, paste, and download in seconds—no complex steps.",
+                                "Supports HD and original resolution video downloads.",
+                                "Use on PC, Mac, Android, and iPhones with any browser.",
+                                "100% online tool, no need to download extra software.",
+                                "Save as many TikTok videos as you want without limits.",
+                                "Convert TikTok videos into MP3 files and download the sound only.",
+                                "No personal data collection; your downloads are private.",
+                            ].map((item, index) => (
+                                <li key={index} className="flex items-center">
+                                    <FaCheckCircle className="text-green-500 text-2xl mr-2" />
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    {/* Cons */}
+                    <div className="bg-white border border-gray-200 rounded-lg shadow-md p-4">
+                        <h3 className="text-xl font-bold text-red-500 mb-5">Cons</h3>
+                        <ul className="text-left text-lg mt-2 space-y-4">
+                            {[
+                                "Doesn’t have a mobile app; works only via web browsers.",
+                                "Requires a stable internet connection to process downloads.",
+                                "On iOS, you may need to move the file manually from the Files app to the Photos app.",
+                            ].map((item, index) => (
+                                <li key={index} className="flex items-center">
+                                    <FaTimesCircle className="text-red-500 text-2xl mr-2" />
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <h1 className="w-full mt-6 text-2xl sm:text-3xl font-semibold text-center text-white bg-teal-500 py-3 rounded-md">
+                    Compare TikoSave with Other TikTok Downloader Tools
+                </h1>
+                <p className="mt-4 leading-7 text-gray-600 text-base sm:text-lg">
+                    The market of TikTok downloader websites has become increasingly competitive. Many TT video downloader tools have been developed. However, TikoSave stands out as a popular choice. It boasts fast and high-quality downloads without interruption, ease of use, unlimited conversions, and versatility on multiple devices.
+                </p>
+                <p className="mt-3 leading-7 text-gray-600 text-base font-bold">
+                    Benefits of Using TikoSave Over Other TikTok Video Downloaders
+                </p>
+
+                <ul className="mt-4 sm:mt-6 ml-4 sm:ml-6 leading-10 text-gray-600 text-base sm:text-lg list-disc list-inside">
+                    <li>Fast and high-quality downloads: TikTokio allows users to download HD TikTok videos with little effort. The download/conversion process lasts less than 5 seconds.</li>
+                    <li>100% free: Our TikTok downloader is always free to use. Users can save unlimited TikTok videos without watermarks on their Android or iPhones. No hidden costs.</li>
+                    <li>No watermark: Users are able to download the TikTok video with no watermark for better quality.</li>
+                    <li>User-friendly interface: The simple interface makes it easy and efficient to download videos from TikTok.</li>
+                    <li>MP3/MP4 formats: TikoSave supports the service of downloading TikTok videos in MP4 and MP3 formats.</li>
+                    <li>Compatible with many devices: You can access our TikTok downloader with many devices (i.e., personal computers, tablets, and smartphones).</li>
+                    <li>Safe TikTok saver with no virus: Your personal information won’t be disclosed since you don’t need to register or log in to use the TikTok downloader.</li>
+                </ul>
+            </div>
+
+             <div className="w-full md:max-w-7xl mx-auto rounded-md text-black md:px-4 py-8">
+                        {/* Review Slider */}
+                        <div className="w-full text-white p-6 text-center  rounded-lg shadow-lg">
+                          <h2 className="text-md md:text-2xl font-bold  bg-purple-800 py-6">
+                            User Reviews for SaveTiko – The Best TikTok Video Downloader
+                          </h2>
+                          <div className="bg-white text-black p-6 rounded-lg shadow-md shadow-gray-500 transition-transform duration-500 ease-in-out h-36 flex flex-col justify-center items-center">
+                            <h3 className="font-bold text-lg flex items-center">
+                              {reviews[currentIndex].name}
+                              <img
+                                src={reviews[currentIndex].flag}
+                                alt="flag"
+                                className="w-6 h-4 ml-2"
+                              />
+                            </h3>
+            
+                            <p className="text-yellow-500 text-xl">
+                              {reviews[currentIndex].stars}
+                            </p>
+                            <p className="italic text-sm">
+                              "{reviews[currentIndex].comment}"
+                            </p>
+                          </div>
+                          {/* Dots Navigation */}
+                          <div className="flex justify-center mt-4 space-x-2">
+                            {reviews.map((_, index) => (
+                              <span
+                                key={index}
+                                className={`h-3 w-3 rounded-full transition-all duration-300 ${
+                                  index === currentIndex ? "bg-black" : "bg-gray-400"
+                                }`}
+                              ></span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
         </>
     );
 }
