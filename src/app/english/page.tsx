@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { languages, reviews,faqData, faqAnswers } from "../utils/data";
+import { languages, reviews, faqData, faqAnswers } from "../utils/data";
 import { ChevronDown, Download, Menu, ClipboardPaste, X } from "lucide-react";
 import Link from "next/link";
 import clsx from "clsx";
@@ -242,7 +242,7 @@ function English() {
       </div>
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="w-full mt-6 text-2xl sm:text-3xl font-semibold text-center text-white bg-teal-500 py-3 rounded-md">
+        <h1 className="w-full mt-4 text-2xl sm:text-3xl font-semibold text-center text-white bg-teal-500 py-3 rounded-md">
           How to Download TikTok Video Without Watermark Online
         </h1>
         <p className="mt-4 leading-7 text-gray-600 text-base sm:text-lg">
@@ -254,7 +254,7 @@ function English() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           <div className="p-6 rounded-lg shadow-lg flex flex-col items-center">
-            <Image src="/search.webp" alt="Paste Icon" width={52} height={52} />
+            <Image src="/search.webp" alt="Paste Icon" width={52} height={52}  className="mb-2" />
             <h3 className="text-xl font-bold mt-2 text-gray-700">
               Find the TikTok Video to Be Saved
             </h3>
@@ -266,7 +266,7 @@ function English() {
           </div>
 
           <div className="p-6 rounded-lg shadow-lg flex flex-col items-center">
-            <Image src="/paste.webp" alt="Paste Icon" width={52} height={52} />
+            <Image src="/paste.webp" alt="Paste Icon" width={52} height={52}  className="mb-2" />
 
             <h3 className="text-xl font-bold mt-2 text-gray-700">
               Paste the TikTok Video Link
@@ -284,6 +284,7 @@ function English() {
               alt="Paste Icon"
               width={52}
               height={52}
+              className="mb-2"
             />
             <h3 className="text-xl font-bold mt-2 text-gray-700">
               Choose the Format and Download
@@ -329,7 +330,7 @@ function English() {
       </div>
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="w-full mt-6 text-2xl sm:text-3xl font-semibold text-center text-white bg-teal-500 py-3 rounded-md">
+        <h1 className="w-full mt-4 text-2xl sm:text-3xl font-semibold text-center text-white bg-teal-500 py-3 rounded-md">
           How to Download TikTok Video Without Watermark on Mobile Phones
           (Android)
         </h1>
@@ -359,7 +360,7 @@ function English() {
       </div>
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="w-full mt-6 text-2xl sm:text-3xl font-semibold text-center text-white bg-teal-500 py-3 rounded-md">
+        <h1 className="w-full mt-4 text-2xl sm:text-3xl font-semibold text-center text-white bg-teal-500 py-3 rounded-md">
           TikTok Video Download to PCs
         </h1>
         <p className="mt-4 leading-7 text-gray-600 text-base sm:text-lg">
@@ -371,7 +372,7 @@ function English() {
       </div>
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="w-full mt-6 text-2xl sm:text-3xl font-semibold text-center text-white bg-teal-500 py-3 rounded-md">
+        <h1 className="w-full mt-4 text-2xl sm:text-3xl font-semibold text-center text-white bg-teal-500 py-3 rounded-md">
           Download TikTok Video Without Watermark on iOS (iPhones or iPads)
         </h1>
         <p className="mt-4 leading-7 text-gray-600 text-base sm:text-lg">
@@ -401,7 +402,7 @@ function English() {
       </div>
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="w-full mt-6 text-2xl sm:text-3xl font-semibold text-center text-white bg-teal-500 py-3 rounded-md">
+        <h1 className="w-full mt-4 text-2xl sm:text-3xl font-semibold text-center text-white bg-teal-500 py-3 rounded-md">
           How to Download TikTok MP3 or Music (Extract the Audio Files from
           TikTok Videos)?
         </h1>
@@ -487,7 +488,7 @@ function English() {
       </div>
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="w-full mt-6 text-2xl sm:text-3xl font-semibold text-center text-white bg-teal-500 py-3 rounded-md">
+        <h1 className="w-full mt-4 text-2xl sm:text-3xl font-semibold text-center text-white bg-teal-500 py-3 rounded-md">
           Compare TikoSave with Other TikTok Downloader Tools
         </h1>
         <p className="mt-4 leading-7 text-gray-600 text-base sm:text-lg">
@@ -573,7 +574,7 @@ function English() {
       </div>
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="w-full mt-6 text-2xl sm:text-3xl font-bold  text-gray-600 ">
+        <h1 className="w-full mt-4 text-2xl sm:text-3xl font-bold  text-gray-600 ">
           How to Download Other Types of TikTok Content
         </h1>
         <p className="mt-4 leading-7 text-teal-500 font-bold text-base sm:text-2xl">
@@ -610,7 +611,7 @@ function English() {
       </div>
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="w-full mt-6 text-2xl sm:text-3xl font-semibold text-center text-white bg-teal-500 py-3 rounded-md">
+        <h1 className="w-full mt-4 text-2xl sm:text-3xl font-semibold text-center text-white bg-teal-500 py-3 rounded-md">
           Tips for Using the TikTok Downloader Responsibly
         </h1>
         <p className="mt-4 leading-7 text-gray-600 text-base sm:text-lg">
@@ -654,69 +655,107 @@ function English() {
         </ul>
       </div>
 
-
-
-
-<div className="w-full max-w-7xl mx-auto px-4 my-10 pb-10 rounded-lg">
-            <h2 className="text-3xl font-bold text-center text-gray-600 py-5 rounded-t-lg mb-5">
-              FAQs – SaveTiko TikTok Video Downloader
-            </h2>
-            <div className="">
-              {faqData.map((question, index) => (
-                <div
-                  key={index}
-                  className={`border-b ${
-                    openFAQ === index ? "border-purple-700" : "border-gray-300"
-                  }`}
-                >
-                  <button
-                    className={`w-full text-left p-4 flex justify-between items-center transition duration-300 rounded-md 
+      <div className="w-full max-w-7xl mx-auto px-4 my-10 pb-10 rounded-lg">
+        <h2 className="text-3xl font-bold text-center text-gray-600 py-5 rounded-t-lg mb-5">
+          FAQs – SaveTiko TikTok Video Downloader
+        </h2>
+        <div className="">
+          {faqData.map((question, index) => (
+            <div
+              key={index}
+              className={`border-b ${
+                openFAQ === index ? "border-purple-700" : "border-gray-300"
+              }`}
+            >
+              <button
+                className={`w-full text-left p-4 flex justify-between items-center transition duration-300 rounded-md 
           ${
             openFAQ === index
               ? "bg-teal-400 text-white "
               : "bg-gray-50 text-gray-500 hover:bg-gray-200 hover:text-gray-600 "
           }`}
-                    onClick={() => toggleFAQ(index)}
+                onClick={() => toggleFAQ(index)}
+              >
+                <span className="font-semibold">{question}</span>
+                <span
+                  className={`transform transition-transform duration-300 ${
+                    openFAQ === index
+                      ? "rotate-180 text-white"
+                      : "rotate-0 text-gray-600"
+                  }`}
+                >
+                  {/* SVG Arrow */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 "
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
                   >
-                    <span className="font-semibold">{question}</span>
-                    <span
-                      className={`transform transition-transform duration-300 ${
-                        openFAQ === index
-                          ? "rotate-180 text-white"
-                          : "rotate-0 text-gray-600"
-                      }`}
-                    >
-                      {/* SVG Arrow */}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 "
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </span>
-                  </button>
-                  <div
-                    className={`overflow-hidden transition-transform duration-500 ease-in-out transform origin-top ${
-                      openFAQ === index
-                        ? "scale-y-100 p-4 bg-white"
-                        : "scale-y-0 h-0"
-                    }`}
-                  >
-                    <p className="text-gray-700 pt-3 pl-4">{faqAnswers[index]}</p>
-                  </div>
-                </div>
-              ))}
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </span>
+              </button>
+              <div
+                className={`overflow-hidden transition-transform duration-500 ease-in-out transform origin-top ${
+                  openFAQ === index
+                    ? "scale-y-100 p-4 bg-white"
+                    : "scale-y-0 h-0"
+                }`}
+              >
+                <p className="text-gray-700 pt-3 pl-4">{faqAnswers[index]}</p>
+              </div>
             </div>
-          </div>
+          ))}
+        </div>
 
+        <p className="mt-8 text-gray-600 text-base sm:text-md bg-gray-200 px-8 py-6 leading-relaxed ">
+          <b>Note:</b> TikoSave (Tiktok video Downloader) is not a tool of
+          TikTok and we have no relationship with TikTok or ByteDance Ltd. We
+          only support TikTok users to download videos on TikTok without logo
+          with ease. Please do not infringe others’ copyright when you use the
+          TikTok downloader site. If you have problems with sites like SnapTik,
+          TikMate or SSSTikTok, try <b>TikoSave!</b> We are constantly updating
+          to make it easy for users to FREELY download TikTok videos. Thank you!
+        </p>
+      </div>
+
+      {/* Footer Links */}
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left mt-6">
+        <div>
+          <h3 className="font-bold mb-2 text-lg">Tools</h3>
+          <ul className="space-y-5 font-semibold text-gray-600">
+            <li>TikTok Video Downloader</li>
+            <li>TikTok MP3 Downloader</li>
+            <li>TikTok Reel Downloader</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold mb-2 text-lg">Legal</h3>
+          <ul className="space-y-5 font-semibold text-gray-600">
+            <li>Privacy Policy</li>
+            <li>Terms of Service</li>
+            <li>Blogs</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold mb-2 text-lg">Company</h3>
+          <ul className="space-y-5 font-semibold text-gray-600">
+            <li>Contact Us</li>
+            <li>About Us</li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Copyright */}
+      <div className="text-center text-sm mt-6 mb-20">
+        Copyright 2025 &copy; TikoSave.com Powered by TikoSave
+      </div>
     </>
   );
 }
