@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "TikoSave Downloader",
   description: "Tiktok Video Downloader",
   icons: {
-    icon: "/tikologoicon.ico", // or "/favicon.png" or ".svg"
+    icon: "/tikologo.jpg", // or "/favicon.png" or ".svg"
   },
 };
 

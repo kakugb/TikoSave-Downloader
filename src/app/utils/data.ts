@@ -1,5 +1,5 @@
 export const languages = [
-  { name: "English", code: "", flag: "https://flagcdn.com/w40/us.png" },
+  { name: "English", code: "en", flag: "https://flagcdn.com/w40/us.png" },
   { name: "Deutsch", code: "de", flag: "https://flagcdn.com/w40/de.png" },
   { name: "Français", code: "fr", flag: "https://flagcdn.com/w40/fr.png" },
   { name: "Español", code: "es", flag: "https://flagcdn.com/w40/es.png" },

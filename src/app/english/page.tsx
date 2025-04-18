@@ -13,6 +13,11 @@ function English() {
   const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
@@ -26,52 +31,49 @@ function English() {
 
   return (
     <>
-      <div className=" sticky top-0 z-50 text-gray-600 bg-white py-2 shadow-md">
-        <nav className="flex justify-around items-center max-w-7xl mx-auto">
-          {/* Logo */}
-          <Link href="/">
-            <Image
-              src="/tikologo.jpg"
-              alt="Paste Icon"
-              width={220}
-              height={220}
-            />
+      <div className="sticky top-0 z-50 bg-white shadow-md text-gray-600">
+      <nav className="flex justify-around items-center max-w-full mx-auto px-4 py-4 h-[80px]">
+        {/* Logo */}
+        
+          <Image
+            src="/tikologo.jpg"
+            alt="Logo"
+            width={220}
+            height={220}
+            priority
+            
+          />
+       
+
+        {/* Desktop Nav */}
+        <div className="hidden md:flex space-x-12 items-center font-medium">
+          <Link href="#" className="hover:text-gray-700 transition duration-300">
+            Save TikTok Video
+          </Link>
+          <Link href="#" className="hover:text-gray-700 transition duration-300">
+            TikTok MP3 Downloader
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-12 items-center font-medium">
-            <Link
-              href="#"
-              className="hover:text-gray-700 transition duration-300"
-            >
-              Save TikTok Video
-            </Link>
-            <Link
-              href="#"
-              className="hover:text-gray-700 transition duration-300"
-            >
-              TikTok MP3 Downloader
-            </Link>
+          {/* Language Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setIsDropdownOpen(true)}
+            onMouseLeave={() => setIsDropdownOpen(false)}
+          >
+            <button className="flex items-center hover:text-gray-600 transition duration-300">
+              Languages{" "}
+              <ChevronDown
+                className={`ml-1 transition-transform duration-300 ${
+                  isDropdownOpen ? "rotate-180" : "rotate-0"
+                }`}
+                size={18}
+              />
+            </button>
 
-            {/* Language Dropdown (Hover) */}
-            <div
-              className="relative"
-              onMouseEnter={() => setIsDropdownOpen(true)}
-              onMouseLeave={() => setIsDropdownOpen(false)}
-            >
-              <button className="flex items-center hover:text-gray-600 transition duration-300">
-                Languages{" "}
-                <ChevronDown
-                  className={`ml-1 transition-transform duration-300 ${
-                    isDropdownOpen ? "rotate-180" : "rotate-0"
-                  }`}
-                  size={18}
-                />
-              </button>
-
+            {hasMounted && (
               <div
                 className={clsx(
-                  "absolute right-0 mt-2 w-80 sm:w-96 bg-white rounded-md shadow-xl transition-all duration-300 overflow-hidden",
+                  "absolute right-0 mt-2 w-80 sm:w-96 bg-white rounded-md shadow-xl overflow-hidden transition-all duration-300",
                   isDropdownOpen
                     ? "max-h-[600px] opacity-100 p-2"
                     : "max-h-0 opacity-0 p-0"
@@ -92,71 +94,73 @@ function English() {
                   ))}
                 </div>
               </div>
-            </div>
+            )}
           </div>
+        </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden text-gray-800">
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              <span
-                className={`block transition-transform duration-300 ease-in-out ${
-                  isMenuOpen ? "rotate-90 scale-110" : ""
+        {/* Mobile Menu Icon */}
+        <div className="md:hidden text-gray-800">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <span
+              className={`block transition-transform duration-300 ease-in-out ${
+                isMenuOpen ? "rotate-90 scale-110" : ""
+              }`}
+            >
+              {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
+            </span>
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile Dropdown */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-white shadow-lg p-4 space-y-3 animate-slide-down text-gray-800">
+          <Link href="#" className="block hover:text-blue-600">
+            Save TikTok Video
+          </Link>
+          <Link href="#" className="block hover:text-blue-600">
+            TikTok MP3 Downloader
+          </Link>
+
+          {/* Mobile Language Dropdown */}
+          <div className="pt-2 border-t">
+            <div
+              className="flex justify-between items-center cursor-pointer"
+              onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
+            >
+              <h3 className="font-semibold">Languages</h3>
+              <ChevronDown
+                className={`transition-transform duration-300 ${
+                  isMobileDropdownOpen ? "rotate-180" : "rotate-0"
                 }`}
-              >
-                {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
-              </span>
-            </button>
-          </div>
-        </nav>
+                size={18}
+              />
+            </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-white shadow-lg p-4 space-y-3 animate-slide-down text-gray-800">
-            <Link href="#" className="block hover:text-blue-600">
-              Save TikTok Video
-            </Link>
-            <Link href="#" className="block hover:text-blue-600">
-              TikTok MP3 Downloader
-            </Link>
-
-            {/* Mobile Language Dropdown with Chevron */}
-            <div className="pt-2 border-t">
-              <div
-                className="flex justify-between items-center cursor-pointer"
-                onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
-              >
-                <h3 className="font-semibold">Languages</h3>
-                <ChevronDown
-                  className={`transition-transform duration-300 ${
-                    isMobileDropdownOpen ? "rotate-180" : "rotate-0"
-                  }`}
-                  size={18}
-                />
-              </div>
-
-              <div
-                className={clsx(
-                  "grid grid-cols-2 gap-2 transition-all duration-300 overflow-hidden",
-                  isMobileDropdownOpen ? "max-h-[600px] mt-2" : "max-h-0"
-                )}
-              >
-                {languages.map((lang) => (
-                  <Link key={lang.code} href={`/${lang.code}`}>
-                    <div className="flex items-center hover:bg-gray-100 rounded-md px-2 py-1 transition">
-                      <img
-                        src={lang.flag}
-                        alt={lang.name}
-                        className="w-5 h-3 mr-2"
-                      />
-                      <span>{lang.name}</span>
-                    </div>
-                  </Link>
-                ))}
-              </div>
+            <div
+              className={clsx(
+                "grid grid-cols-2 gap-2 transition-all duration-300 overflow-hidden",
+                isMobileDropdownOpen ? "max-h-[600px] mt-2" : "max-h-0"
+              )}
+            >
+              {languages.map((lang) => (
+                <Link key={lang.code} href={`/${lang.code}`}>
+                  <div className="flex items-center hover:bg-gray-100 rounded-md px-2 py-1 transition">
+                    <img
+                      src={lang.flag}
+                      alt={lang.name}
+                      className="w-5 h-3 mr-2"
+                    />
+                    <span>{lang.name}</span>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
+    </div>
+
 
       <div className="h-96 flex flex-col items-center justify-center text-center mt-1 py-4 relative bg-teal-400">
         <h2 className="text-3xl font-bold text-white">
@@ -178,10 +182,11 @@ function English() {
             />
 
             {/* Paste Button with Icon */}
-            <button className="flex items-center space-x-2 my-auto rounded-xl text-black font-semibold transition-all mr-2 hover:text-blue-600">
-              <ClipboardPaste size={18} />
-              <span>Paste</span>
-            </button>
+            <button className="flex items-center space-x-2 my-auto rounded-xl text-black font-semibold transition-all mr-2 hover:text-blue-600 border border-gray-300 hover:border-blue-400 px-4 py-2 shadow-sm hover:shadow-md bg-white">
+  <ClipboardPaste size={18} />
+  <span>Paste</span>
+</button>
+
           </div>
 
           {/* Download Button Section - Centered Vertically */}
@@ -769,7 +774,7 @@ function English() {
       </div>
 
       {/* Copyright */}
-      <div className="text-center text-sm mt-6 mb-20">
+      <div className="text-center text-sm mt-6 mb-20 px-4">
         Copyright 2025 copy; TikoSave.com Powered by TikoSave
       </div>
     </>
