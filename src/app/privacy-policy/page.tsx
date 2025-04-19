@@ -4,7 +4,7 @@ function Privacypolicy() {
       <h1 className="text-5xl text-center text-teal-500 py-4 font-bold">
         Privacy Policy
       </h1>
-      <div className="w-7xl mx-auto">
+      <div className="w-10/12  mx-auto">
         <p className="text-xl ">Last Revised: 04/19/2025</p>
         <p className="text-md text-justify mt-4 leading-relaxed">
           Pursuant to our Terms of Use, this document describes how we treat
