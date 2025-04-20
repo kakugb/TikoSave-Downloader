@@ -1,72 +1,60 @@
-function Privacypolicy() {
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy | YourSiteName',
+  description: 'Read our Privacy Policy to understand how YourSiteName handles your personal information, cookies, and data usage.',
+  robots: 'index, follow',
+};
+
+export default function PrivacyPolicy() {
   return (
     <>
-      <h1 className="text-5xl text-center text-teal-500 py-4 font-bold">
-        Privacy Policy
-      </h1>
-      <div className="w-10/12  mx-auto">
-        <p className="text-xl ">Last Revised: 04/19/2025</p>
-        <p className="text-md text-justify mt-4 leading-relaxed">
-          Pursuant to our Terms of Use, this document describes how we treat
-          personal information related to your use of this website and the
-          services offered on and through it (the “Service”), including
-          information you provide when using it.We expressly and strictly limit
-          use of the Service to adults over 18 years of age or the age of
-          majority in the individual’s jurisdiction, whichever is greater.
-          Anyone under this age is strictly forbidden from using the Service. We
-          do not knowingly seek or collect any personal information or data from
-          persons who have not attained this age.Data CollectedUsing the
-          Service. When you access the Service, use the search function, convert
-          files or download files, your IP address, country of origin and other
-          non-personal information about your computer or device (such as web
-          requests, browser type, browser language, referring URL, operating
-          system and date and time of requests) may be recorded for log file
-          information, aggregated traffic information and in the event that
-          there is any misappropriation of information and/or content.Usage
-          Information. We may record information about your usage of the Service
-          such as your search terms, the content you access and download and
-          other statistics.Uploaded Content. Any content that you upload, access
-          or transmit through the Service may be collected by
-          us.Correspondences. We may keep a record of any correspondence between
-          you and us.Cookies. When you use the Service, we may send cookies to
-          your computer to uniquely identify your browser session. We may use
-          both session cookies and persistent cookies.Data UsageWe may use your
-          information to provide you with certain features and to create a
-          personalized experience on the Service. We may also use that
-          information to operate, maintain and improve features and
-          functionality of the Service.We use cookies, web beacons and other
-          information to store information so that you will not have to re-enter
-          it on future visits, provide personalized content and information,
-          monitor the effectiveness of the Service and monitor aggregate metrics
-          such as the number of visitors and page views (including for use in
-          monitoring visitors from affiliates). They may also be used to provide
-          targeted advertising based on your country of origin and other
-          personal information.We may aggregate your personal information with
-          personal information of other members and users, and disclose such
-          information to advertisers and other third-parties for marketing and
-          promotional purposes.We may use your information to run promotions,
-          contests, surveys and other features and events.Disclosures of
-          InformationWe may be required to release certain data to comply with
-          legal obligations or in order to enforce our Terms of Use and other
-          agreements. We may also release certain data to protect the rights,
-          property or safety of us, our users and others. This includes
-          providing information to other companies or organizations like the
-          police or governmental authorities for the purposes of protection
-          against or prosecution of any illegal activity, whether or not it is
-          identified in the Terms of Use.If you upload, access or transmit any
-          illegal or unauthorized material to or through the Service, or you are
-          suspected of doing such, we may forward all available information to
-          relevant authorities, including respective copyright owners, without
-          any notice to you.MiscellaneousWhile we use commercially reasonable
-          physical, managerial and technical safeguards to secure your
-          information, the transmission of information via the Internet is not
-          completely secure and we cannot ensure or warrant the security of any
-          information or content you transmit to us. Any information or content
-          you transmit to us is done at your own risk
-        </p>
-      </div>
+      <section className="bg-white text-gray-900 dark:bg-gray-900 dark:text-white py-12 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold text-center text-teal-500 mb-8">
+            Privacy Policy
+          </h1>
+
+          <p className="text-lg text-center mb-2">Last Revised: <span className="font-medium">April 19, 2025</span></p>
+
+          <article className="mt-8 space-y-6 text-lg leading-relaxed">
+            <p>
+              Pursuant to our Terms of Use, this document describes how we treat personal information related to your use of this website and the services offered on and through it (the “Service”), including information you provide when using it.
+            </p>
+
+            <p>
+              We strictly limit the Service to adults over 18 years of age (or age of majority in your jurisdiction). We do not knowingly collect personal data from anyone under this age.
+            </p>
+
+            <h2 className="text-2xl font-semibold mt-8 text-teal-400">Data Collected</h2>
+            <ul className="list-disc pl-6 space-y-2">
+              <li><strong>Using the Service:</strong> We collect non-personal data like IP address, country, device info, etc.</li>
+              <li><strong>Usage Information:</strong> Search terms, downloads, and activity may be logged.</li>
+              <li><strong>Uploaded Content:</strong> Any uploaded files may be stored.</li>
+              <li><strong>Correspondence:</strong> Messages exchanged with us may be recorded.</li>
+              <li><strong>Cookies:</strong> We use cookies for session handling and personalization.</li>
+            </ul>
+
+            <h2 className="text-2xl font-semibold mt-8 text-teal-400">Data Usage</h2>
+            <p>
+              Information collected helps us enhance your experience, store preferences, analyze performance, and offer personalized content or ads.
+            </p>
+            <p>
+              Aggregated, anonymized data may be shared with partners or advertisers.
+            </p>
+
+            <h2 className="text-2xl font-semibold mt-8 text-teal-400">Disclosures of Information</h2>
+            <p>
+              We may disclose your data to comply with legal obligations, enforce our Terms of Use, or protect our users and systems from harm or misuse.
+            </p>
+
+            <h2 className="text-2xl font-semibold mt-8 text-teal-400">Security Notice</h2>
+            <p>
+              While we use standard security measures to protect your data, no online transmission is 100% secure. You share information at your own risk.
+            </p>
+          </article>
+        </div>
+      </section>
     </>
   );
 }
-
-export default Privacypolicy;
